@@ -13,7 +13,7 @@ router.get('/', async function(req,res,next) {
     try{
         console.log("Getting Upcoming Space Launches!");
         let result = await launchlibrary.getUpcomingLaunches();
-        res.status(200).json(result.data);
+        res.status(200).json(result);
     } catch(e){
         next(e)
     }  
