@@ -1,10 +1,17 @@
 import React, { Component } from "react";
+import SpaceLaunchesHome from "./SpaceLaunchesHome";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 class App extends Component{
     render(){
         return(
-            <div>
-                <h1>Welcome</h1>
-            </div>
+            <Router>
+                <div>
+                    <Switch>
+                        <Route exact path="/" component={SpaceLaunchesHome} />
+                    </Switch>
+                </div>
+            </Router>          
         );
     }
 };
