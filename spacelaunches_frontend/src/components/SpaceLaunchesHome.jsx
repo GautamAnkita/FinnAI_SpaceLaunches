@@ -32,7 +32,22 @@ class SpaceLaunchesHome extends Component{
         return(
                 <div>
                     <h1>Welcome</h1>
-                    <h5>{spaceLaunches}</h5>
+                    {spaceLaunches.map((launch) => (
+                        <div>
+                            <div>Name: {launch.name}</div>
+                            <div>Rocket Name: {launch.rocket_name}</div>
+                            <div>Time of Launch: {launch.time_of_launch}</div>
+                            <div>Start Date/Time of Launch: {launch.window_start}</div>
+                            <div>End Date/Time of Launch: {launch.window_end}</div>
+                            <div>Launch Service Provider: {launch.lsp}</div>
+                            <div>Launch Status: {launch.status}</div>
+                            <div>Launch Location: {launch.location}</div>
+                            <div>Launch Location Wiki: {launch.location_wiki}</div>
+                            <div>Launch Service Provider Wiki: {launch.lsp_wiki}</div>
+                            <div>Rocket Wiki: {launch.rocket_wiki}</div>
+                            <hr/>
+                        </div>
+                    ))}
                 </div>
         );
     }
