@@ -11,7 +11,7 @@ import launchlibrary from '../services/launchlibrary';
  */
 router.get('/', async function(req,res,next) { 
     try{
-        console.log("Getting Space Launches!");
+        console.log("Getting Upcoming Space Launches!");
         let result = await launchlibrary.getUpcomingLaunches();
         res.status(200).json(result.data);
     } catch(e){
