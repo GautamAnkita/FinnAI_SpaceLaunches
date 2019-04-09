@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import LaunchLibrary from "../requests/launchlibrary";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
+
 
 class SpaceLaunchesHome extends Component{
     constructor(props){
@@ -34,20 +38,33 @@ class SpaceLaunchesHome extends Component{
                     <h1>Welcome</h1>
                     {spaceLaunches.map((launch) => (
                         <div>
-                            <div>Name: {launch.name}</div>
-                            <div>Rocket Name: {launch.rocket_name}</div>
-                            <div>Time of Launch: {launch.time_of_launch}</div>
-                            <div>Start Date/Time of Launch: {launch.window_start}</div>
-                            <div>End Date/Time of Launch: {launch.window_end}</div>
-                            <div>Launch Service Provider: {launch.lsp}</div>
-                            <div>Launch Status: {launch.status}</div>
-                            <div>Launch Location: {launch.location}</div>
-                            <div>Launch Location Wiki: {launch.location_wiki}</div>
-                            <div>Launch Service Provider Wiki: {launch.lsp_wiki}</div>
-                            <div>Rocket Wiki: {launch.rocket_wiki}</div>
-                            <hr/>
+                            <Card style={{ width: '50rem'}}>
+                                <Card.Img variant="top" src="" />
+                                <Card.Body>
+                                    <Card.Title>{launch.name}</Card.Title>
+                                    <Card.Text>{launch.rocket_name}</Card.Text>
+                                </Card.Body>
+                                <ListGroup className="list-group-flush">
+                                    <ListGroupItem>{launch.time_of_launch}</ListGroupItem>
+                                    <ListGroupItem>{launch.window_start} - {launch.window_end}</ListGroupItem>
+                                    <ListGroupItem>{launch.lsp}</ListGroupItem>
+                                    <ListGroupItem>{launch.status}</ListGroupItem>
+                                    <ListGroupItem>{launch.location}</ListGroupItem>
+                                    <ListGroupItem>{launch.lsp}</ListGroupItem>
+                                    <ListGroupItem>
+                                        <Card.Link href={launch.location_wiki}>{launch.location_wiki}</Card.Link>
+                                    </ListGroupItem>
+                                    <ListGroupItem>
+                                        <Card.Link href={launch.lsp_wiki}>{launch.lsp_wiki}</Card.Link>
+                                    </ListGroupItem>
+                                    <ListGroupItem>
+                                        <Card.Link href={launch.rocket_wiki}>{launch.rocket_wiki}</Card.Link>
+                                    </ListGroupItem>
+                                </ListGroup>
+                            </Card>
                         </div>
                     ))}
+                    
                 </div>
         );
     }
