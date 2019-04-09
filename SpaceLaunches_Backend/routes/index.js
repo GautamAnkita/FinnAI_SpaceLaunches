@@ -1,10 +1,8 @@
-let express = require('express');
-let router = express.Router();
+'use strict';
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  console.log("Welcome");
-  res.status(200).json();
-});
+import express from 'express';
+const router = express.Router();
+
+router.use('/', require('../controllers/spacelaunches-controller'));
 
 module.exports = router;
