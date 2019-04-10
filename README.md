@@ -11,6 +11,10 @@ This is a WebApplication which shows the upcoming space launch missions around t
 5. Run *npm start* inside **spacelaunches_frontend** directory to start the frontend.
 6. Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
+## Technologies
+* **Frontend:** React
+* **Backend:** Node.js Express
+
 ## Notes
 * Backend server runs on port 3000.
 * Frontend server runs on port 3001.
