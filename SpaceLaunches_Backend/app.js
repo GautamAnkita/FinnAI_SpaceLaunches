@@ -1,12 +1,13 @@
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-let indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 
-let app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -16,6 +17,21 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+let whitelist = ['http://localhost:3001'];
+let corsOptions = {
+  origin: (origin, callback)=>{
+            if (whitelist.indexOf(origin) !== -1) {
+                callback(null, true)
+            } else {
+                callback(new Error('Not allowed by CORS'))
+            }
+          },
+  credentials: true
+}
+
+app.use(cors(corsOptions));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
