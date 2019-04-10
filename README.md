@@ -1,6 +1,8 @@
 # FinnAI_SpaceLaunches
 This is a WebApplication which shows the upcoming space launch missions around the world.
 
+![alt text](https://github.com/GautamAnkita/FinnAI_SpaceLaunches/blob/master/Screenshot.png "Screenshot")
+
 ## Setup Instructions
 1. Perfrom the git clone of **FinnAI_SpaceLaunches** by clicking on the 'Clone or download' button shows above in this page.
 2. Run *npm install* inside **SpaceLaunches_Backend** directory to install all required dependencies of backend.
