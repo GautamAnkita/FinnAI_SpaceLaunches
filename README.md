@@ -6,7 +6,8 @@ This is a WebApplication which shows the upcoming space launch missions around t
 2. Run *npm install* inside **SpaceLaunches_Backend** directory to install all required dependencies of backend.
 3. Run *npm install* inside **spacelaunches_frontend** directory to install all required dependencies of frontend.
 4. Run *npm start* inside **SpaceLaunches_Backend** directory to start the backend server.
-5. Run *npm install* inside **spacelaunches_frontend** directory to start the frontend.
+5. Run *npm start* inside **spacelaunches_frontend** directory to start the frontend.
+6. Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 ## Notes
 * Backend server runs on port 3000.
