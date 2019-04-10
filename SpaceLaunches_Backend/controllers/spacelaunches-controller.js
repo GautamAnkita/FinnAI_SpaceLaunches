@@ -2,7 +2,7 @@
 
 import express from 'express';
 const router = express.Router();
-import launchlibrary from '../services/launchlibrary';
+import LaunchLibrary from '../services/launchlibrary';
 
 
 /**
@@ -11,7 +11,7 @@ import launchlibrary from '../services/launchlibrary';
  */
 router.get('/', async function(req,res,next) { 
     try{
-        console.log("Getting Upcoming Space Launches!");
+        const launchlibrary = new LaunchLibrary();
         let result = await launchlibrary.getUpcomingLaunches();
         res.status(200).json(result);
     } catch(e){
